@@ -575,10 +575,10 @@ def main(args):
 if __name__ == "__main__":
     assert pyro.__version__.startswith('1.5.0')
     parser = argparse.ArgumentParser(description="SIR epidemiology modeling using HMC")
-    parser.add_argument("-p", "--population", default=10, type=int)
+    parser.add_argument("-p", "--population", default=100, type=int)
     parser.add_argument("-m", "--min-observations", default=3, type=int)
     parser.add_argument("-d", "--duration", default=10, type=int)
-    parser.add_argument("-f", "--forecast", default=0, type=int)
+    parser.add_argument("-f", "--forecast", default=30, type=int)
     parser.add_argument("-R0", "--basic-reproduction-number", default=1.5, type=float)
     parser.add_argument("-tau", "--recovery-time", default=7.0, type=float)
     parser.add_argument("-rho", "--response-rate", default=0.5, type=float)
@@ -595,6 +595,7 @@ if __name__ == "__main__":
     parser.add_argument("--cuda", action="store_true")
     parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--plot", action="store_true")
+
     args = parser.parse_args()
 
     if args.double:
