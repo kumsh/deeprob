@@ -37,6 +37,6 @@ sizemat=ifelse(distmat==0,0,sizemat)
 case_stanlist=list(N=N,growth=growth,size_t0=size_t0, distmat=distmat,sizemat=sizemat)
 
 fit_plant <- stan(
-  file = "/Users/urgupta/Documents/deeprob_1/spatial_neighbour/Untitled.stan",
+  file = "../spatial_nm.stan",
   data = case_stanlist
 )
